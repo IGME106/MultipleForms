@@ -13,5 +13,20 @@ namespace MultipleForms {
         public GameForm() {
             InitializeComponent();
         }
+
+        private void BtnOKGameForm_Click(object sender, EventArgs e) {
+
+            int inputValue = 0;
+
+            if (InputTester.IsInteger(TxtBGuessGameForm.Text)) {
+                inputValue = int.Parse(TxtBGuessGameForm.Text);
+            }
+            
+            if (inputValue > MenuForm.lowerValue) {
+
+            } else if (inputValue < MenuForm.lowerValue) {
+
+            }
+        }
     }
 }

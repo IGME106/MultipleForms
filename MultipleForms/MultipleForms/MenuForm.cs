@@ -10,8 +10,13 @@ using System.Windows.Forms;
 
 namespace MultipleForms {
     public partial class MenuForm : Form {
+
+        public static int lowerValue = 0;
+        public static int upperValue = 0;
+
         public MenuForm() {
             InitializeComponent();
+            Console.WriteLine("This is a test");
         }
 
         private void MenuForm_Load(object sender, EventArgs e) {
@@ -24,10 +29,26 @@ namespace MultipleForms {
 
         private void BtnStartMenuForm_Click(object sender, EventArgs e) {
 
-        }
+            GameForm gameForm = new GameForm();
 
-        private void RichTxtBDescrMenuForm_TextChanged(object sender, EventArgs e) {
+            if (InputTester.IsInteger(TxtBLowerValueMenuForm.Text)) {
+                lowerValue = int.Parse(TxtBLowerValueMenuForm.Text);
 
+                if (InputTester.IsInteger(TxtBUpperValueMenuForm.Text)) {
+                    upperValue = int.Parse(TxtBUpperValueMenuForm.Text);
+
+                    try {
+                        if (int.Parse(TxtBLowerValueMenuForm.Text) < int.Parse(TxtBUpperValueMenuForm.Text)) {
+                            DialogResult gameFormResult = gameForm.ShowDialog(this);
+                        } else {
+                            throw new InvalidRangeException();
+                        }
+                    } catch (InvalidRangeException ex) {
+                        Console.WriteLine("The upper value is lower than the lower value");
+                        InputTester.ExceptionHandler(ex, "");
+                    }
+                }
+            }
         }
     }
 }
