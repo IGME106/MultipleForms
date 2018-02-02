@@ -1,5 +1,7 @@
-﻿namespace MultipleForms {
-    partial class GameForm {
+﻿namespace MultipleForms
+{
+    partial class GameForm
+    {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -9,8 +11,10 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -22,14 +26,15 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+        private void InitializeComponent()
+        {
             this.components = new System.ComponentModel.Container();
             this.LblGuessGameForm = new System.Windows.Forms.Label();
             this.TxtBGuessGameForm = new System.Windows.Forms.TextBox();
             this.ListBoxGameForm = new System.Windows.Forms.ListBox();
             this.BtnOKGameForm = new System.Windows.Forms.Button();
             this.ProgressBarGameForm = new System.Windows.Forms.ProgressBar();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // LblGuessGameForm
@@ -79,6 +84,10 @@
             this.ProgressBarGameForm.Size = new System.Drawing.Size(326, 23);
             this.ProgressBarGameForm.TabIndex = 4;
             // 
+            // Timer1
+            // 
+            this.Timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -90,6 +99,7 @@
             this.Controls.Add(this.TxtBGuessGameForm);
             this.Controls.Add(this.LblGuessGameForm);
             this.Name = "GameForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameForm";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -103,6 +113,6 @@
         private System.Windows.Forms.ListBox ListBoxGameForm;
         private System.Windows.Forms.Button BtnOKGameForm;
         private System.Windows.Forms.ProgressBar ProgressBarGameForm;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer Timer1;
     }
 }

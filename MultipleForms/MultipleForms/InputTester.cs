@@ -7,18 +7,22 @@ using System.Drawing;
 using System.Windows.Forms;
 
 
-namespace MultipleForms {
-    public class InputTester {
-
-        public static bool IsInteger(string testValue) {
-
+namespace MultipleForms
+{
+    public class InputTester
+    {
+        public static bool IsInteger(string testValue)
+        {
             bool returnValue = false;
 
-            try {
+            try
+            {
                 int convertedValue = int.Parse(testValue);
 
                 returnValue = true;
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 Console.WriteLine(e.ToString());
                 ExceptionHandler(e, "Integer");
             }
@@ -26,11 +30,12 @@ namespace MultipleForms {
             return returnValue;
         }
 
-        public static void ExceptionHandler(Exception e, String requirement) {
-
+        public static void ExceptionHandler(Exception e, String requirement)
+        {
             string myException = e.GetType().Name;
 
-            switch (myException) {
+            switch (myException)
+            {
                 case "FormatException":
 
                     DisplayMessage("InvalidType", requirement);
@@ -41,16 +46,22 @@ namespace MultipleForms {
                     DisplayMessage("InvalidRange", requirement);
 
                     break;
+                case "ValueOutOfBoundsException":
+
+                    DisplayMessage("OutOfBounds", requirement);
+
+                    break;
                 default:
                     break;
             }
         }
 
-        public static void DisplayMessage(string messageDefinition, string requirement) {
-
+        public static void DisplayMessage(string messageDefinition, string requirement)
+        {
             string messageString = "default";
 
-            switch (messageDefinition) {
+            switch (messageDefinition)
+            {
                 case "InvalidType":
                     messageString = "The values entered are not of type " +
                         requirement + ", please try again";
@@ -59,6 +70,10 @@ namespace MultipleForms {
                 case "InvalidRange":
                     messageString = "Your upper value should be higher than your lower value" +
                         ", please try again";
+
+                    break;
+                case "OutOfBounds":
+                    messageString = requirement;
 
                     break;
                 default:
@@ -73,15 +88,26 @@ namespace MultipleForms {
             );
         }
     }
-    
-    public class InvalidRangeException : Exception {
 
+    public class InvalidRangeException : Exception
+    {
         const string name = "InvalidRangeException";
 
         public InvalidRangeException()
             : base() { }
 
         public InvalidRangeException(string message)
+            : base(message) { }
+    }
+
+    public class ValueOutOfBoundsException: Exception
+    {
+        const string name = "ValueOutOfBoundsException";
+
+        public ValueOutOfBoundsException()
+            : base() { }
+
+        public ValueOutOfBoundsException(string message)
             : base(message) { }
     }
 }

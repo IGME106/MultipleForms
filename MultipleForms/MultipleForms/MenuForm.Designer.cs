@@ -1,5 +1,7 @@
-﻿namespace MultipleForms {
-    partial class MenuForm {
+﻿namespace MultipleForms
+{
+    partial class MenuForm
+    {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -9,8 +11,10 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -22,7 +26,8 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+        private void InitializeComponent()
+        {
             this.BtnStartMenuForm = new System.Windows.Forms.Button();
             this.TxtBLowerValueMenuForm = new System.Windows.Forms.TextBox();
             this.LblLowerValueMenuForm = new System.Windows.Forms.Label();
@@ -80,6 +85,7 @@
             // 
             // RichTxtBDescrMenuForm
             // 
+            this.RichTxtBDescrMenuForm.BackColor = System.Drawing.SystemColors.Control;
             this.RichTxtBDescrMenuForm.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.RichTxtBDescrMenuForm.Font = new System.Drawing.Font("Comic Sans MS", 10.15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RichTxtBDescrMenuForm.Location = new System.Drawing.Point(28, 29);
@@ -104,6 +110,7 @@
             this.MaximumSize = new System.Drawing.Size(450, 350);
             this.MinimumSize = new System.Drawing.Size(450, 350);
             this.Name = "MenuForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Number Guessing Game";
             this.Load += new System.EventHandler(this.MenuForm_Load);
             this.ResumeLayout(false);
