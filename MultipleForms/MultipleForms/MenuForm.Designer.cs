@@ -54,6 +54,8 @@
             this.TxtBLowerValueMenuForm.Name = "TxtBLowerValueMenuForm";
             this.TxtBLowerValueMenuForm.Size = new System.Drawing.Size(100, 31);
             this.TxtBLowerValueMenuForm.TabIndex = 1;
+            this.TxtBLowerValueMenuForm.Text = "1";
+            this.TxtBLowerValueMenuForm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // LblLowerValueMenuForm
             // 
@@ -82,6 +84,8 @@
             this.TxtBUpperValueMenuForm.Name = "TxtBUpperValueMenuForm";
             this.TxtBUpperValueMenuForm.Size = new System.Drawing.Size(100, 31);
             this.TxtBUpperValueMenuForm.TabIndex = 4;
+            this.TxtBUpperValueMenuForm.Text = "10";
+            this.TxtBUpperValueMenuForm.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // RichTxtBDescrMenuForm
             // 
@@ -112,7 +116,6 @@
             this.Name = "MenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Number Guessing Game";
-            this.Load += new System.EventHandler(this.MenuForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

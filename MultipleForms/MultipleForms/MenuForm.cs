@@ -63,8 +63,8 @@ namespace MultipleForms
                             GameForm gameForm = new GameForm(lowerValue, upperValue);
                             DialogResult gameFormResult = gameForm.ShowDialog(this);
 
-                            this.TxtBLowerValueMenuForm.Text = "";          // Reset menu form values after game completes
-                            this.TxtBUpperValueMenuForm.Text = "";
+                            this.TxtBLowerValueMenuForm.Text = "1";          // Reset menu form values after game completes
+                            this.TxtBUpperValueMenuForm.Text = "10";
                         }
                         else
                         {
